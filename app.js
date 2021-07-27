@@ -1,13 +1,14 @@
- function foo(){
+ function foo(event){
+   event.preventDefault()
  
 //  let sel = document.getElementById("form-select");
- let serch = document.getElementById("ser")
-console.log(serch.value)
+ let search = document.getElementById("ser")
+console.log(search.value)
 
 let news = document.getElementById("news");
 fetch(
 
-  `https://newsapi.org/v2/everything?q=${serch.value}&from=2021-07-23&to=2021-07-23&sortBy=popularity&apiKey=c204e5ef8109415080c732b4f07efa22`
+  `https://newsapi.org/v2/everything?q=${search.value}&from=2021-07-23&to=2021-07-23&sortBy=popularity&apiKey=16bce94d64464f04808b8eeb474d8e34`
 )
   .then((data) => data.json())
   .then((json) => {
